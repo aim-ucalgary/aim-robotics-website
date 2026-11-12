@@ -2,7 +2,7 @@ import SectionLabel from "../components/SectionLabel";
 import { contact } from "../content/loader";
 import "./Contact.css";
 
-/** 07 / Contact — minimal, functional channels rather than a large form. */
+/** 08 / Contact — minimal, functional channels rather than a large form. */
 function Contact() {
   return (
     <section id="contact" className="contact" aria-labelledby="contact-heading">

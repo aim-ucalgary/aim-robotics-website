@@ -1,0 +1,29 @@
+sectionLabel: "05 / RESEARCH"
+heading: "Research"
+intro: >
+  AIM's research focuses on the core problems of autonomous robot soccer:
+  coordinating a team of robots in real time, and planning and controlling
+  fast, precise motion on the field.
+
+# To add a research topic, add a new entry below and put its image in /public.
+# `image` is optional — topics without one show an "Image coming soon" placeholder.
+topics:
+  - id: multi-robot-coordination
+    title: "Multi-Robot Coordination & Strategy"
+    image: "bisector pathfinding.png" # placeholder image
+    imageAlt: "Path planning diagram for multiple robots"
+
+  - id: motion-planning
+    title: "Motion Planning & Control"
+    image: "omniwheels.png" # placeholder image
+    imageAlt: "Omnidirectional robot wheels"
+
+  - id: motion-planning
+    title: "Motion Planning & Control"
+    image: "omniwheels.png" # placeholder image
+    imageAlt: "Omnidirectional robot wheels"
+  
+  - id: motion-planning
+    title: "Motion Planning & Control"
+    image: "omniwheels.png" # placeholder image
+    imageAlt: "Omnidirectional robot wheels"

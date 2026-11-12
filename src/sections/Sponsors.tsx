@@ -6,7 +6,7 @@ import "./Sponsors.css";
 
 const tierName = (id: string) => sponsors.tiers.find((tier) => tier.id === id);
 
-/** 06 / Sponsors — tiers, benefits, and where sponsor support goes. */
+/** 07 / Sponsors — tiers, benefits, and where sponsor support goes. */
 function Sponsors() {
   return (
     <section id="sponsors" className="sponsors" aria-labelledby="sponsors-heading">

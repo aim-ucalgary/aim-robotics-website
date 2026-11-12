@@ -3,7 +3,7 @@ import TechnicalLabel from "../components/TechnicalLabel";
 import { teams } from "../content/loader";
 import "./SubTeams.css";
 
-/** 05 / Teams — communicates interdisciplinary integration around one system. */
+/** 06 / Teams — communicates interdisciplinary integration around one system. */
 function SubTeams() {
   return (
     <section id="teams" className="subteams" aria-labelledby="subteams-heading">

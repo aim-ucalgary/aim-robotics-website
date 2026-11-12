@@ -102,6 +102,20 @@ export interface EngineeringContent {
   projects: EngineeringProject[];
 }
 
+export interface ResearchTopic {
+  id: string;
+  title: string;
+  image?: string;
+  imageAlt?: string;
+}
+
+export interface ResearchContent {
+  sectionLabel: string;
+  heading: string;
+  intro: string;
+  topics: ResearchTopic[];
+}
+
 export interface SubTeam {
   id: string;
   title: string;
