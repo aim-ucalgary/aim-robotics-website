@@ -30,7 +30,7 @@ function Navbar() {
         </a>
 
         <nav className="navbar__links" aria-label="Primary">
-          {navigation.links.map((link) => (
+          {navigation.links.map((link) => ( //Turn each entry into a desktop link (eg. Link to the Engineering Section)
             <a key={link.id} href={link.href} className="navbar__link">
               {link.label}
             </a>
@@ -56,7 +56,7 @@ function Navbar() {
         aria-label="Mobile"
         hidden={!menuOpen}
       >
-        {navigation.links.map((link) => (
+        {navigation.links.map((link) => ( //Build the links for the mobile menu
           <a
             key={link.id}
             href={link.href}

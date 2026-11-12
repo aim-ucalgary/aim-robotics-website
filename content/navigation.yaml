@@ -13,6 +13,9 @@ links:
   - id: join
     label: "Join"
     href: "#join"
+  - id: sponsors
+    label: "Sponsors"
+    href: "#sponsors"
   - id: contact
     label: "Contact"
     href: "#contact"

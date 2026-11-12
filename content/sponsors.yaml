@@ -1,0 +1,95 @@
+sectionLabel: "06 / SPONSORS"
+heading: "Stand behind every step"
+intro: >
+  Our sponsors fund the materials, electronics, compute, and travel that turn a
+  student-designed fleet of soccer-playing robots into a team competing on the
+  world stage at RoboCup 2027.
+
+primaryCta:
+  label: "Become a sponsor"
+  href: "mailto:aim.ucalgary@gmail.com?subject=AIM%20Sponsorship"
+packageCta:
+  label: "Sponsorship package"
+  href: "/aim-sponsorship-package-2026-27.pdf"
+
+supportText: >
+  AIM is a new, entirely student-run team of UofC students working toward
+  the 2027 RoboCup Small Size League in Nuremberg, Germany. Partner support
+  directly drives every phase of our pipeline, from prototyping to competition.
+objectivesLabel: "WHERE YOUR SUPPORT GOES"
+objectives:
+  - id: hardware
+    tag: "HARDWARE"
+    title: "Prototyping & Hardware"
+    description: "Custom hardware fabrication and component testing."
+  - id: electronics
+    tag: "ELECTRICAL"
+    title: "Advanced Electronics & Sensing"
+    description: "Motor controllers, power systems, and telemetry components."
+  - id: ai
+    tag: "SOFTWARE"
+    title: "AI Research"
+    description: "Simulation resources, strategy execution, and multi-robot coordination algorithms."
+  - id: competition
+    tag: "COMPETITION"
+    title: "Access to Competition"
+    description: "Sending our team to Germany with a fleet of 6 robots to compete at RoboCup."
+
+tiersLabel: "SPONSORSHIP TIERS"
+placeholderLabel: "Your logo here"
+tiers:
+  - id: platinum
+    name: "Platinum Tier"
+    price: "$1,000"
+    description: "Flagship partners with maximum visibility across our robots, events, and channels."
+    slots: 2
+  - id: gold
+    name: "Gold Tier"
+    price: "$500"
+    description: "Major partners helping us move faster through design, manufacturing, and testing."
+    slots: 3
+  - id: silver
+    name: "Silver Tier"
+    price: "$250"
+    description: "Key supporters providing funding, materials, tools, and services."
+    slots: 3
+
+benefitsLabel: "SPONSOR BENEFITS"
+benefitsHeading: "Choose the level that fits."
+benefitColumns: ["silver", "gold", "platinum"]
+benefits:
+  - label: "Logo placement on robots"
+    tiers: ["silver", "gold", "platinum"]
+  - label: "Logo on website"
+    tiers: ["silver", "gold", "platinum"]
+  - label: "Social media thank-you post"
+    tiers: ["silver", "gold", "platinum"]
+  - label: "Sponsorship appreciation nights"
+    tiers: ["gold", "platinum"]
+  - label: "Logo at events"
+    tiers: ["gold", "platinum"]
+  - label: "Logo on merch"
+    tiers: ["gold", "platinum"]
+  - label: "Sponsored post of your product"
+    tiers: ["platinum"]
+  - label: "Industry networking event"
+    tiers: ["platinum"]
+
+budgetLabel: "BUDGET & INVESTMENT"
+budgetTotal: "$5,000"
+budgetTotalLabel: "Estimated total project budget"
+budget:
+  - label: "Materials & Manufacturing"
+    percent: 50
+  - label: "Competition Fees"
+    percent: 35
+  - label: "Contingency & Maintenance"
+    percent: 10
+  - label: "Outreach & Media"
+    percent: 5
+
+inKindHeading: "In-kind sponsorships welcome"
+inKindText: >
+  Tiers may be fulfilled through monetary contributions or equivalent-value
+  donations of components, materials, equipment, or technical services. We're
+  also happy to discuss custom packages. Reach out at aim.ucalgary@gmail.com.

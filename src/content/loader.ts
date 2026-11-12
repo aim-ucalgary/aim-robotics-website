@@ -8,6 +8,7 @@ import aboutRaw from "../../content/about.yaml?raw";
 import whatWeDoRaw from "../../content/what-we-do.yaml?raw";
 import engineeringRaw from "../../content/engineering.yaml?raw";
 import teamsRaw from "../../content/teams.yaml?raw";
+import sponsorsRaw from "../../content/sponsors.yaml?raw";
 import contactRaw from "../../content/contact.yaml?raw";
 import footerRaw from "../../content/footer.yaml?raw";
 
@@ -19,6 +20,7 @@ import type {
   WhatWeDoContent,
   EngineeringContent,
   TeamsContent,
+  SponsorsContent,
   ContactContent,
   FooterContent,
 } from "./types";
@@ -30,5 +32,6 @@ export const about = load(aboutRaw) as AboutContent;
 export const whatWeDo = load(whatWeDoRaw) as WhatWeDoContent;
 export const engineering = load(engineeringRaw) as EngineeringContent;
 export const teams = load(teamsRaw) as TeamsContent;
-export const contact = load(contactRaw) as ContactContent;
+export const sponsors = load(sponsorsRaw) as SponsorsContent;
+export const contact =load(contactRaw) as ContactContent;
 export const footer = load(footerRaw) as FooterContent;

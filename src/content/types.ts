@@ -117,6 +117,57 @@ export interface TeamsContent {
   centerLabel: string;
 }
 
+//Sponsor
+export interface SponsorObjective {
+  id: string;
+  tag: string;
+  title: string;
+  description: string;
+}
+
+export interface SponsorTier {
+  id: string;
+  name: string;
+  price: string;
+  description: string;
+  slots: number;
+}
+
+export interface SponsorBenefit {
+  label: string;
+  tiers: string[];
+}
+
+export interface BudgetItem {
+  label: string;
+  percent: number;
+}
+
+export interface SponsorsContent {
+  sectionLabel: string;
+  heading: string;
+  intro: string;
+  primaryCta: CtaLink;
+  packageCta: CtaLink;
+  supportText: string;
+  objectivesLabel: string;
+  objectives: SponsorObjective[];
+  tiersLabel: string;
+  placeholderLabel: string;
+  tiers: SponsorTier[];
+  benefitsLabel: string;
+  benefitsHeading: string;
+  benefitColumns: string[];
+  benefits: SponsorBenefit[];
+  budgetLabel: string;
+  budgetTotal: string;
+  budgetTotalLabel: string;
+  budget: BudgetItem[];
+  inKindHeading: string;
+  inKindText: string;
+}
+//Sponsor
+
 export interface ContactChannel {
   id: string;
   label: string;
