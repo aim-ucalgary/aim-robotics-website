@@ -64,14 +64,6 @@ function Sponsors() {
                   <h4 className="sponsors__tier-name">{tier.name}</h4>
                   <p className="sponsors__tier-description">{tier.description}</p>
                 </div>
-                <ul className="sponsors__slots">
-                  {Array.from({ length: tier.slots }, (_, i) => (
-                    <li key={i} className="sponsors__slot">
-                      <span className="sponsors__slot-box">{sponsors.placeholderLabel}</span>
-                      <span className="sponsors__slot-tier">{tier.name}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             ))}
           </div>

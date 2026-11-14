@@ -144,7 +144,6 @@ export interface SponsorTier {
   name: string;
   price: string;
   description: string;
-  slots: number;
 }
 
 export interface SponsorBenefit {
@@ -167,7 +166,6 @@ export interface SponsorsContent {
   objectivesLabel: string;
   objectives: SponsorObjective[];
   tiersLabel: string;
-  placeholderLabel: string;
   tiers: SponsorTier[];
   benefitsLabel: string;
   benefitsHeading: string;

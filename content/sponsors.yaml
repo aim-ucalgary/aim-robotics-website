@@ -36,23 +36,19 @@ objectives:
     description: "Sending our team to Germany with a fleet of 6 robots to compete at RoboCup."
 
 tiersLabel: "SPONSORSHIP TIERS"
-placeholderLabel: "Your logo here"
 tiers:
   - id: platinum
     name: "Platinum Tier"
     price: "$1,000"
     description: "Flagship partners with maximum visibility across our robots, events, and channels."
-    slots: 2
   - id: gold
     name: "Gold Tier"
     price: "$500"
     description: "Major partners helping us move faster through design, manufacturing, and testing."
-    slots: 3
   - id: silver
     name: "Silver Tier"
     price: "$250"
     description: "Key supporters providing funding, materials, tools, and services."
-    slots: 3
 
 benefitsLabel: "SPONSOR BENEFITS"
 benefitsHeading: "Choose the level that fits."

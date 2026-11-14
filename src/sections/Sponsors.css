@@ -85,9 +85,6 @@
 }
 
 .sponsors__tier {
-  display: grid;
-  grid-template-columns: minmax(0, 18rem) 1fr;
-  gap: clamp(1.5rem, 4vw, 3.5rem);
   padding-block: clamp(1.75rem, 4vh, 2.5rem);
   border-top: 1px solid var(--line);
 }
@@ -134,52 +131,9 @@
 }
 
 .sponsors__tier-description {
+  max-width: 60ch;
   font-size: 0.9375rem;
   color: var(--muted);
-}
-
-.sponsors__slots {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-  gap: 1rem;
-  align-content: start;
-}
-
-.sponsors__slot {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  padding: 0.75rem;
-  border: 1px solid var(--line);
-  background: var(--off-black);
-  transition: border-color var(--duration-fast) var(--ease-precise);
-}
-
-.sponsors__slot:hover {
-  border-color: var(--aim-red);
-}
-
-.sponsors__slot-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  aspect-ratio: 16 / 7;
-  border: 1px dashed var(--circle-color);
-  font-family: var(--font-condensed);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--charcoal);
-}
-
-.sponsors__slot-tier {
-  font-family: var(--font-condensed);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--tier-accent);
 }
 
 /* ---------- Benefits table ---------- */
@@ -382,16 +336,11 @@
 
 @media (max-width: 720px) {
   .sponsors__top,
-  .sponsors__tier,
   .sponsors__bottom {
     grid-template-columns: 1fr;
   }
 
   .sponsors__objectives {
     grid-template-columns: 1fr;
-  }
-
-  .sponsors__slots {
-    grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
   }
 }
