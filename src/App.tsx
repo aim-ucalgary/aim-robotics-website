@@ -6,6 +6,7 @@ import WhatWeDo from "./sections/WhatWeDo";
 import Engineering from "./sections/Engineering";
 import Research from "./sections/Research";
 import SubTeams from "./sections/SubTeams";
+import Members from "./sections/Members";
 import Sponsors from "./sections/Sponsors";
 import Contact from "./sections/Contact";
 
@@ -23,6 +24,7 @@ function App() {
         <Engineering />
         <Research />
         <SubTeams />
+        <Members />
         <Sponsors />
         <Contact />
       </main>

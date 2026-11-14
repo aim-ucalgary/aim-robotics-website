@@ -131,6 +131,28 @@ export interface TeamsContent {
   centerLabel: string;
 }
 
+export interface Member {
+  name: string;
+  role: string;
+  program?: string;
+  photo?: string;
+  linkedin?: string;
+}
+
+export interface MemberGroup {
+  id: string;
+  title: string;
+  tag: string;
+  members: Member[];
+}
+
+export interface MembersContent {
+  sectionLabel: string;
+  heading: string;
+  intro: string;
+  groups: MemberGroup[];
+}
+
 //Sponsor
 export interface SponsorObjective {
   id: string;
