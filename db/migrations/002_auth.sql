@@ -1,0 +1,64 @@
+-- 002: Sign-in tables for Better Auth (better-auth 1.7.x core schema, Postgres types),
+-- plus links from profiles/admins to the signed-in user.
+-- Run on `dev` first, test, then on `production`. Run as the owner role (SQL Editor).
+
+create table "user" (
+  "id"            text primary key,
+  "name"          text not null,
+  "email"         text not null unique,
+  "emailVerified" boolean not null default false,
+  "image"         text,
+  "createdAt"     timestamptz not null default current_timestamp,
+  "updatedAt"     timestamptz not null default current_timestamp
+);
+
+create table "session" (
+  "id"        text primary key,
+  "expiresAt" timestamptz not null,
+  "token"     text not null unique,
+  "createdAt" timestamptz not null default current_timestamp,
+  "updatedAt" timestamptz not null,
+  "ipAddress" text,
+  "userAgent" text,
+  "userId"    text not null references "user" ("id") on delete cascade
+);
+create index "session_userId_idx" on "session" ("userId");
+
+create table "account" (
+  "id"                    text primary key,
+  "accountId"             text not null,
+  "providerId"            text not null,
+  "userId"                text not null references "user" ("id") on delete cascade,
+  "accessToken"           text,
+  "refreshToken"          text,
+  "idToken"               text,
+  "accessTokenExpiresAt"  timestamptz,
+  "refreshTokenExpiresAt" timestamptz,
+  "scope"                 text,
+  "password"              text,
+  "createdAt"             timestamptz not null default current_timestamp,
+  "updatedAt"             timestamptz not null
+);
+create index "account_userId_idx" on "account" ("userId");
+
+create table "verification" (
+  "id"         text primary key,
+  "identifier" text not null,
+  "value"      text not null,
+  "expiresAt"  timestamptz not null,
+  "createdAt"  timestamptz not null default current_timestamp,
+  "updatedAt"  timestamptz not null default current_timestamp
+);
+create index "verification_identifier_idx" on "verification" ("identifier");
+
+-- A profile or admin row belongs to a real user; deleting the user removes them.
+alter table profiles
+  add constraint profiles_user_id_fkey
+  foreign key (user_id) references "user" ("id") on delete cascade;
+
+alter table admins
+  add constraint admins_user_id_fkey
+  foreign key (user_id) references "user" ("id") on delete cascade;
+
+-- The website's functions manage sign-ins and sessions.
+grant select, insert, update, delete on "user", "session", "account", "verification" to aim_app;

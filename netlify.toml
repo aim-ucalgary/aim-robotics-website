@@ -2,6 +2,18 @@
   command = "npm run build"
   publish = "dist"
 
+# Serverless functions (sign-in and the profile API) live in netlify/functions.
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# `npm run dev:full`: the site plus its functions at http://localhost:8888, reading .env.
+[dev]
+  command = "npm run dev"
+  targetPort = 5173
+  port = 8888
+  framework = "#custom"
+
 # Members-only profile editor: reachable only by its direct link, never indexed by search engines.
 # (Not listed in robots.txt on purpose, since that file is public and would advertise the path.)
 [[headers]]

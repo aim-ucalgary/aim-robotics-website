@@ -1,7 +1,7 @@
 import { mockApi } from "./mockApi";
+import { realApi } from "./realApi";
 import type { ProfileApi } from "./types";
 
 // The one place the profile page gets its backend from.
-// TODO (Phase 2): replace mockApi with the real implementation once sign-in and the Neon
-// database are connected. The page itself won't need to change.
-export const api: ProfileApi = mockApi;
+// Set VITE_PROFILE_PREVIEW=true to try the page without sign-in or a database (`npm run dev:preview`).
+export const api: ProfileApi = import.meta.env.VITE_PROFILE_PREVIEW === "true" ? mockApi : realApi;

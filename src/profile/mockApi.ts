@@ -27,6 +27,11 @@ function write(key: string, value: unknown) {
   }
 }
 
+/** The profile saved in preview mode, for the home page's Members section in preview. */
+export function readPreviewProfile(): Profile | null {
+  return read<Profile>(PROFILE_KEY);
+}
+
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 function blobToDataUrl(blob: Blob): Promise<string> {
@@ -40,6 +45,7 @@ function blobToDataUrl(blob: Blob): Promise<string> {
 
 export const mockApi: ProfileApi = {
   isPreview: true,
+  photoUploads: true,
 
   async getSession() {
     await wait(150);
@@ -66,8 +72,8 @@ export const mockApi: ProfileApi = {
     const previous = read<Profile>(PROFILE_KEY);
     const saved: Profile = {
       ...draft,
-      // Members can't publish themselves: new and edited profiles wait for an admin.
-      status: previous?.status === "hidden" ? "hidden" : "pending",
+      // Same rule as the real API: consent publishes straight away; hidden stays hidden.
+      status: previous?.status === "hidden" ? "hidden" : draft.consent ? "published" : "pending",
       updatedAt: new Date().toISOString(),
     };
     write(PROFILE_KEY, saved);

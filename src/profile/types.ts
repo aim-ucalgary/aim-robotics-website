@@ -34,6 +34,8 @@ export interface SessionUser {
 export interface ProfileApi {
   /** True while sign-in and the database are not connected yet. */
   readonly isPreview: boolean;
+  /** False until photo storage (Cloudinary) is connected. */
+  readonly photoUploads: boolean;
   getSession(): Promise<SessionUser | null>;
   signIn(provider: SignInProvider): Promise<void>;
   signOut(): Promise<void>;

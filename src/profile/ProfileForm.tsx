@@ -2,6 +2,7 @@ import { useEffect, useId, useState, type ChangeEvent, type FormEvent } from "re
 import MemberCard from "../components/MemberCard";
 import { teams } from "../content/loader";
 import { api } from "./api";
+import { SaveError } from "./realApi";
 import { ACCEPTED_TYPES, MAX_INPUT_BYTES, resizePhoto } from "./resizePhoto";
 import { emptyDraft, type Profile, type ProfileDraft, type ProfileStatus } from "./types";
 import { cleanDraft, LIMITS, validateDraft, type FieldErrors } from "./validation";
@@ -11,15 +12,15 @@ const SUBTEAM_IDS = SUBTEAMS.map((subteam) => subteam.id);
 
 const STATUS_TEXT: Record<ProfileStatus, { label: string; detail: string }> = {
   pending: {
-    label: "Waiting for review",
-    detail: "An admin will review your profile before it appears on the website.",
+    label: "Not on the website",
+    detail: "Tick the box agreeing to have your profile shown, then save to publish it.",
   },
   published: {
     label: "Live on the website",
-    detail: "Changes you save will be reviewed again before they go live.",
+    detail: "Changes you save go live straight away.",
   },
   hidden: {
-    label: "Hidden",
+    label: "Hidden by an admin",
     detail: "Your profile isn't shown on the website. Contact an admin to make it visible again.",
   },
 };
@@ -120,12 +121,20 @@ function ProfileForm({ initialProfile, onSaved }: ProfileFormProps) {
       onSaved(saved);
       setMessage({
         tone: "success",
-        text: cleaned.consent
-          ? "Saved. An admin will review your profile before it goes live."
-          : "Saved, but it won't appear on the website until you agree to have it shown.",
+        text:
+          saved.status === "published"
+            ? "Saved. Your profile is live on the website."
+            : saved.status === "hidden"
+              ? "Saved. Your profile is still hidden by an admin."
+              : "Saved, but it won't appear on the website until you agree to have it shown.",
       });
-    } catch {
-      setMessage({ tone: "error", text: "Saving failed. Check your connection and try again." });
+    } catch (error) {
+      if (error instanceof SaveError) {
+        setErrors(error.fields);
+        setMessage({ tone: "error", text: error.message });
+      } else {
+        setMessage({ tone: "error", text: "Saving failed. Check your connection and try again." });
+      }
     } finally {
       setSaving(false);
     }
@@ -165,6 +174,13 @@ function ProfileForm({ initialProfile, onSaved }: ProfileFormProps) {
                 <span>No photo</span>
               )}
             </div>
+            {!api.photoUploads ? (
+              <div className="profile-photo__controls">
+                <p className="profile-field__hint">
+                  Photo uploads are coming soon. Until then, your card shows your initials.
+                </p>
+              </div>
+            ) : (
             <div className="profile-photo__controls">
               <label className="arrow-link profile-photo__upload">
                 {photoBusy ? "Processing…" : draft.photo ? "Change photo" : "Upload photo"}
@@ -191,6 +207,7 @@ function ProfileForm({ initialProfile, onSaved }: ProfileFormProps) {
                 </p>
               )}
             </div>
+            )}
           </div>
         </fieldset>
 

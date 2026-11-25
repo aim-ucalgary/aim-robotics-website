@@ -14,6 +14,34 @@ type PageState =
 
 const CONTACT_EMAIL = "aim.ucalgary@gmail.com";
 
+/**
+ * After a refused sign-in, Better Auth sends the browser back here with `?error=<code>`.
+ * Read it once, then remove it from the address bar so a refresh starts clean.
+ */
+function takeSignInError(): PageState | null {
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get("error");
+  if (!code) return null;
+  params.delete("error");
+  params.delete("error_description");
+  const query = params.toString();
+  window.history.replaceState(null, "", `${window.location.pathname}${query ? `?${query}` : ""}`);
+
+  if (code === "NOT_APPROVED") return { kind: "not-approved", user: { email: "", approved: false } };
+  if (code === "EMAIL_NOT_VERIFIED") {
+    return {
+      kind: "error",
+      message:
+        "Your sign-in provider didn't confirm your email address, so we can't match it to the member list. Try signing in with Google instead.",
+    };
+  }
+  if (code === "access_denied") return { kind: "signed-out" };
+  return { kind: "error", message: "Sign-in didn't complete. Please try again." };
+}
+
+// Read once at page load (not inside an effect, which React may run twice in development).
+const signInError = takeSignInError();
+
 /** Works out which screen to show from the current session and profile. */
 async function loadPageState(): Promise<PageState> {
   try {
@@ -29,10 +57,11 @@ async function loadPageState(): Promise<PageState> {
 
 /** /profile/ — where approved members sign in and edit their own profile card. */
 function ProfilePage() {
-  const [state, setState] = useState<PageState>({ kind: "loading" });
+  const [state, setState] = useState<PageState>(signInError ?? { kind: "loading" });
   const [busy, setBusy] = useState(false);
 
   useEffect(() => {
+    if (signInError) return;
     let active = true;
     loadPageState().then((next) => {
       if (active) setState(next);
@@ -56,11 +85,14 @@ function ProfilePage() {
   }
 
   async function handleSignOut() {
-    await api.signOut();
-    setState({ kind: "signed-out" });
+    try {
+      await api.signOut();
+    } finally {
+      setState({ kind: "signed-out" });
+    }
   }
 
-  const user = state.kind === "editor" || state.kind === "not-approved" ? state.user : null;
+  const user = state.kind === "editor" || (state.kind === "not-approved" && state.user.email) ? state.user : null;
 
   return (
     <>
@@ -108,8 +140,8 @@ function ProfilePage() {
               Set up your AIM profile
             </h1>
             <p className="profile-panel__text">
-              Sign in with the email address the team approved for you. Your profile appears on the AIM website
-              once an admin has reviewed it.
+              Sign in with the email address the team approved for you. Once you save your profile, it appears on
+              the AIM website straight away.
             </p>
             <div className="profile-signin">
               <button
@@ -139,11 +171,21 @@ function ProfilePage() {
               This email isn't on the member list
             </h1>
             <p className="profile-panel__text">
-              You're signed in as <strong>{state.user.email}</strong>, which hasn't been approved. If you're on the
-              team, ask an AIM admin to add this email, or email{" "}
-              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. You can also sign out and try a different
-              account.
+              {state.user.email ? (
+                <>
+                  You're signed in as <strong>{state.user.email}</strong>, which hasn't been approved.
+                </>
+              ) : (
+                <>The account you signed in with hasn't been approved.</>
+              )}{" "}
+              If you're on the team, ask an AIM admin to add your email, or email{" "}
+              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. You can also try a different account.
             </p>
+            <div className="profile-signin">
+              <button type="button" className="profile-signin__button" onClick={handleSignOut}>
+                Use a different account
+              </button>
+            </div>
           </section>
         )}
 
@@ -158,6 +200,11 @@ function ProfilePage() {
           <section className="profile-panel" role="alert">
             <h1 className="profile-panel__heading">Something went wrong</h1>
             <p className="profile-panel__text">{state.message}</p>
+            <div className="profile-signin">
+              <button type="button" className="profile-signin__button" onClick={handleSignOut}>
+                Back to sign-in
+              </button>
+            </div>
           </section>
         )}
       </main>

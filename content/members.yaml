@@ -1,94 +1,30 @@
 sectionLabel: "06 / TEAMS — MEMBERS"
 heading: "The people behind the robots."
 intro: >
-  Meet the members of AIM, from the leadership team that keeps the club running
-  to the subteams building every part of the system.
+  Meet the members of AIM, the subteams building every part of the system and
+  the people who keep the club running.
 
-# Each group renders as its own block of profile cards.
-# To add a member, add an entry under the right group and put their photo in /public.
-# `photo`, `program`, and `linkedin` are optional — members without a photo show their initials.
+# Member profiles come from the database: members create and edit their own at /profile/.
+# Each group below is one block of cards; its `id` must match a subteam id in the database
+# (see db/migrations/001_init.sql). Within a group, cards are ordered by the profile's
+# `sort_order` (lower first, so leads can go first), then by name. Empty groups are hidden.
 groups:
-  - id: leadership
-    title: "Leadership"
-    tag: "LEADERSHIP"
-    members:
-      - name: "Member Name"
-        role: "President"
-        program: "Program, Year"
-      - name: "Member Name"
-        role: "Vice President"
-        program: "Program, Year"
-      - name: "Member Name"
-        role: "Technical Lead"
-        program: "Program, Year"
-      - name: "Member Name"
-        role: "Operations Lead"
-        program: "Program, Year"
-
   - id: software-ai
     title: "Software & AI"
     tag: "SOFTWARE"
-    members:
-      - name: "Member Name"
-        role: "Software Lead"
-        program: "Program, Year"
-      - name: "Member Name"
-        role: "AI & Strategy"
-        program: "Program, Year"
-      - name: "Member Name"
-        role: "Motion Planning & Control"
-        program: "Program, Year"
-      - name: "Member Name"
-        role: "Firmware"
-        program: "Program, Year"
 
   - id: electrical-embedded
     title: "Electrical & Embedded Systems"
     tag: "ELECTRICAL"
-    members:
-      - name: "Member Name"
-        role: "Electrical Lead"
-        program: "Program, Year"
-      - name: "Member Name"
-        role: "PCB Design"
-        program: "Program, Year"
-      - name: "Member Name"
-        role: "Wireless Communication"
-        program: "Program, Year"
-      - name: "Member Name"
-        role: "Power Management"
-        program: "Program, Year"
 
   - id: mechanical
     title: "Mechanical Systems"
     tag: "MECHANICAL"
-    members:
-      - name: "Member Name"
-        role: "Mechanical Lead"
-        program: "Program, Year"
-      - name: "Member Name"
-        role: "Kicker & Dribbler"
-        program: "Program, Year"
-      - name: "Member Name"
-        role: "Drivetrain"
-        program: "Program, Year"
-      - name: "Member Name"
-        role: "Chassis & Shell"
-        program: "Program, Year"
 
   - id: operations
     title: "Administrative"
     tag: "ADMINISTRATIVE"
-    members:
-      - name: "Member Name"
-        role: "Administrative Lead"
-        program: "Program, Year"
-      - name: "Member Name"
-        role: "Sponsorship"
-        program: "Program, Year"
-      - name: "Member Name"
-        role: "Outreach & Media"
-        program: "Program, Year"
-      - name: "Member Name"
-        role: "Competition Logistics"
-        program: "Program, Year"
+
+loadingText: "Loading members…"
+emptyText: "Member profiles are on their way. Check back soon."
+errorText: "Member profiles couldn't be loaded right now. Please try again later."

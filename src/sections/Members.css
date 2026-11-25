@@ -20,6 +20,12 @@
   margin-bottom: clamp(3rem, 7vh, 4.5rem);
 }
 
+.members__status {
+  padding: 1.25rem 0;
+  border-top: 2px solid var(--ink);
+  color: var(--charcoal);
+}
+
 /* ---------- Groups ---------- */
 .members__group + .members__group {
   margin-top: clamp(3rem, 8vh, 5rem);

@@ -139,11 +139,24 @@ export interface Member {
   linkedin?: string;
 }
 
+/** A published profile as returned by GET /api/members (no emails or account ids). */
+export interface PublicMember {
+  id: string;
+  name: string;
+  role: string;
+  subteam: string;
+  program: string;
+  bio: string;
+  photo: string;
+  linkedin: string;
+  github: string;
+}
+
+/** A block of member cards; `id` matches a subteam id in the database. */
 export interface MemberGroup {
   id: string;
   title: string;
   tag: string;
-  members: Member[];
 }
 
 export interface MembersContent {
@@ -151,6 +164,9 @@ export interface MembersContent {
   heading: string;
   intro: string;
   groups: MemberGroup[];
+  loadingText: string;
+  emptyText: string;
+  errorText: string;
 }
 
 //Sponsor

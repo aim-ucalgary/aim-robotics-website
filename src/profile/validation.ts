@@ -9,6 +9,9 @@ export const LIMITS = {
   bio: 500,
 } as const;
 
+/** Subteam ids the `profiles.subteam` check constraint allows. Match these to teams.yaml. */
+export const DB_SUBTEAM_IDS = ["software-ai", "electrical-embedded", "mechanical", "operations"];
+
 const LINKEDIN_PATTERN = /^https:\/\/(www\.)?linkedin\.com\//;
 const GITHUB_PATTERN = /^https:\/\/github\.com\//;
 

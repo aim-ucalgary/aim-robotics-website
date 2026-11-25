@@ -5,18 +5,24 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:full": "npx --yes netlify-cli@27.20.1 dev",
+    "dev:preview": "vite --mode preview-profile",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview"
   },
   "dependencies": {
+    "better-auth": "^1.7.27",
     "js-yaml": "^5.3.0",
+    "pg": "^8.23.1",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
   "devDependencies": {
+    "@netlify/functions": "^6.1.1",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^24.13.3",
+    "@types/pg": "^8.23.1",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.4",
