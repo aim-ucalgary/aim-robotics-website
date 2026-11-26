@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <!--
+    AIM hero background: a dark take on the "Meet the Team" template.
+    Kit stripes (top-left, now light), circuit traces with gold pads,
+    field markings (right) and a line-drawn ball (bottom-left).
+  -->
+  <defs>
+    <!-- Fine grain so the black reads like the template's textured paper. -->
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="7" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.06 0"/>
+    </filter>
+    <radialGradient id="glow" cx="72%" cy="48%" r="55%">
+      <stop offset="0" stop-color="#1c1c1c"/>
+      <stop offset="1" stop-color="#0b0b0b"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+      <stop offset="0.6" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.55"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Base -->
+  <rect width="1920" height="1080" fill="url(#glow)"/>
+  <rect width="1920" height="1080" filter="url(#grain)"/>
+
+  <!-- Field markings, right edge (penalty box, goal area, arc, corner) -->
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="3">
+    <rect x="1660" y="300" width="300" height="480"/>
+    <rect x="1810" y="420" width="150" height="240"/>
+    <path d="M1660 445 A 150 150 0 0 0 1660 635"/>
+    <circle cx="1760" cy="540" r="5" fill="#ffffff" fill-opacity="0.09"/>
+    <path d="M1920 1010 A 70 70 0 0 0 1850 1080"/>
+    <path d="M1920 70 A 70 70 0 0 1 1850 0"/>
+    <line x1="980" y1="0" x2="980" y2="1080" stroke-opacity="0.045"/>
+    <circle cx="980" cy="540" r="190" stroke-opacity="0.045"/>
+  </g>
+
+  <!-- Circuit traces: top-right cluster (gold) -->
+  <g fill="none" stroke="#d0aa3b" stroke-opacity="0.38" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1480 0 V120 L1420 180 H1260"/>
+    <path d="M1520 0 V150 L1450 220 H1330 L1300 250"/>
+    <path d="M1560 0 V110 L1620 170 V260 L1680 320"/>
+    <path d="M1920 210 H1780 L1720 150 V90"/>
+  </g>
+  <g fill="#0b0b0b" stroke="#d0aa3b" stroke-opacity="0.55" stroke-width="3">
+    <circle cx="1260" cy="180" r="9"/>
+    <circle cx="1300" cy="250" r="9"/>
+    <circle cx="1680" cy="320" r="9"/>
+    <circle cx="1720" cy="90" r="9"/>
+  </g>
+
+  <!-- Circuit traces: top-right cluster (silver) -->
+  <g fill="none" stroke="#bdbdbd" stroke-opacity="0.2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1600 0 V80 L1660 140 H1760"/>
+    <path d="M1920 280 H1830 L1790 320 V380"/>
+    <path d="M1440 0 V70 L1390 120 H1300"/>
+  </g>
+  <g fill="#0b0b0b" stroke="#bdbdbd" stroke-opacity="0.3" stroke-width="2.5">
+    <circle cx="1760" cy="140" r="7"/>
+    <circle cx="1790" cy="380" r="7"/>
+    <circle cx="1300" cy="120" r="7"/>
+  </g>
+
+  <!-- Circuit traces: left edge -->
+  <g fill="none" stroke="#d0aa3b" stroke-opacity="0.3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 470 H90 L150 410 V330"/>
+    <path d="M0 510 H120 L190 440 H250"/>
+  </g>
+  <g fill="none" stroke="#bdbdbd" stroke-opacity="0.18" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 550 H140 L200 610 H300"/>
+    <path d="M0 590 H70 L110 630 V720"/>
+  </g>
+  <g fill="#0b0b0b" stroke-width="3">
+    <circle cx="150" cy="330" r="9" stroke="#d0aa3b" stroke-opacity="0.5"/>
+    <circle cx="250" cy="440" r="9" stroke="#d0aa3b" stroke-opacity="0.5"/>
+    <circle cx="300" cy="610" r="7" stroke="#bdbdbd" stroke-opacity="0.3"/>
+    <circle cx="110" cy="720" r="7" stroke="#bdbdbd" stroke-opacity="0.3"/>
+  </g>
+
+  <!-- Circuit traces: bottom edge -->
+  <g fill="none" stroke="#d0aa3b" stroke-opacity="0.3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1180 1080 V990 L1240 930 H1360"/>
+    <path d="M1230 1080 V1010 L1270 970 H1420 L1460 930"/>
+  </g>
+  <g fill="none" stroke="#bdbdbd" stroke-opacity="0.18" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1130 1080 V960 L1090 920 V860"/>
+    <path d="M1560 1080 V1030 L1610 980 H1700"/>
+  </g>
+  <g fill="#0b0b0b" stroke-width="3">
+    <circle cx="1360" cy="930" r="9" stroke="#d0aa3b" stroke-opacity="0.5"/>
+    <circle cx="1460" cy="930" r="9" stroke="#d0aa3b" stroke-opacity="0.5"/>
+    <circle cx="1090" cy="860" r="7" stroke="#bdbdbd" stroke-opacity="0.3"/>
+    <circle cx="1700" cy="980" r="7" stroke="#bdbdbd" stroke-opacity="0.3"/>
+  </g>
+
+  <!-- Line-drawn ball, cropped off the bottom-left corner -->
+  <g fill="none" stroke="#d6d6d6" stroke-opacity="0.16" stroke-width="3.5" stroke-linejoin="round">
+    <circle cx="190" cy="1000" r="190"/>
+    <!-- centre pentagon -->
+    <path d="M190 905 L248 947 L226 1015 L154 1015 L132 947 Z" fill="#d6d6d6" fill-opacity="0.06"/>
+    <!-- seams out to neighbouring panels -->
+    <path d="M190 905 L190 840"/>
+    <path d="M248 947 L310 925"/>
+    <path d="M226 1015 L262 1070"/>
+    <path d="M154 1015 L118 1070"/>
+    <path d="M132 947 L70 925"/>
+    <!-- partial outer panels -->
+    <path d="M190 840 L245 818 M190 840 L135 818"/>
+    <path d="M310 925 L345 880 M310 925 L350 975"/>
+    <path d="M70 925 L35 880 M70 925 L30 975"/>
+    <path d="M262 1070 L330 1060 M118 1070 L50 1060"/>
+  </g>
+
+  <!-- Kit stripes, top-left corner: lighter on the dark ground.
+       Scaled to 60% so they stay a corner accent and clear the hero text. -->
+  <g transform="scale(0.6)">
+    <polygon points="0,0 120,0 0,120" fill="#a50d1c"/>
+    <polygon points="150,0 260,0 0,260 0,150" fill="#d9d9d9" fill-opacity="0.9"/>
+    <polygon points="282,0 296,0 0,296 0,282" fill="#ffffff"/>
+    <polygon points="318,0 348,0 0,348 0,318" fill="#a50d1c"/>
+    <polygon points="370,0 378,0 0,378 0,370" fill="#d0aa3b" fill-opacity="0.85"/>
+  </g>
+
+  <!-- Thin crimson and gold rules from the template headings, bottom-right -->
+  <g>
+    <rect x="1520" y="1040" width="260" height="5" fill="#a50d1c"/>
+    <rect x="1790" y="1040" width="130" height="5" fill="#d0aa3b" fill-opacity="0.85"/>
+  </g>
+
+  <!-- Vignette keeps the edges quiet behind text -->
+  <rect width="1920" height="1080" fill="url(#vignette)"/>
+</svg>

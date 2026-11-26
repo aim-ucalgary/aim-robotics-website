@@ -1,4 +1,8 @@
 .hero {
+  /* Dark take on the "Meet the Team" template: kit stripes, circuit traces,
+     field markings and a line-drawn ball. Falls back to black while loading.
+     Anchored left so the kit stripes stay in view when narrower screens crop it. */
+  background: var(--black) url("../assets/hero-background.svg") left center / cover no-repeat;
   border-bottom: 4px solid var(--aim-red);
   min-height: 100svh;
   display: flex;
@@ -68,7 +72,8 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: var(--black);
+  /* Transparent so the logo sits directly on the hero background. */
+  background: transparent;
 }
 
 .hero__motif {

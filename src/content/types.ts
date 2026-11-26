@@ -107,6 +107,10 @@ export interface ResearchTopic {
   title: string;
   image?: string;
   imageAlt?: string;
+  /** Optional short category shown in the caption, e.g. "MECHANICAL" → "FIG. 01 · MECHANICAL". */
+  tag?: string;
+  /** Optional link. "https://…" opens in a new tab; "/…" stays on the AIM site. */
+  href?: string;
 }
 
 export interface ResearchContent {

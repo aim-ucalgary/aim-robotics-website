@@ -25,7 +25,12 @@
   height: 76px;
 }
 
+/* A small black disc keeps the logo readable over the hero's kit stripes. */
 .navbar__brand {
+  display: inline-flex;
+  padding: 6px;
+  border-radius: 50%;
+  background: var(--black);
   text-decoration: none;
 }
 
