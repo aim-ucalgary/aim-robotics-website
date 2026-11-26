@@ -41,7 +41,7 @@ function Research() {
       <div className="container">
         <SectionLabel>{research.sectionLabel}</SectionLabel>
 
-        <div className="research__top">
+        <div className="research__top reveal">
           <div>
             <h2 id="research-heading" className="research__heading">
               {research.heading}
@@ -71,7 +71,7 @@ function Research() {
           </div>
         </div>
 
-        <ul ref={trackRef} className="research__track" tabIndex={0} aria-label="Research topics">
+        <ul ref={trackRef} className="research__track reveal" tabIndex={0} aria-label="Research topics">
           {research.topics.map((topic) => (
             <li key={topic.id} className="research__card">
               <div className="research__media">

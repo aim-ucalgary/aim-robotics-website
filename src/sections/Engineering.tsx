@@ -11,11 +11,11 @@ function Engineering() {
     <section id="engineering" className="engineering" aria-labelledby="engineering-heading">
       <div className="container">
         <SectionLabel>{engineering.sectionLabel}</SectionLabel>
-        <h2 id="engineering-heading" className="engineering__heading">
+        <h2 id="engineering-heading" className="engineering__heading reveal">
           {engineering.heading}
         </h2>
 
-        <div className="robocup">
+        <div className="robocup reveal">
           <div className="robocup__text">
             <TechnicalLabel accent>{engineering.roboCupLabel}</TechnicalLabel>
             <p className="robocup__intro">{engineering.roboCupIntro}</p>
@@ -27,7 +27,7 @@ function Engineering() {
           </div>
         </div>
 
-        <ul className="pipeline">
+        <ul className="pipeline reveal">
           {engineering.pipeline.map((step, index) => (
             <li key={step} className="pipeline__step">
               <span className="pipeline__label">{step}</span>

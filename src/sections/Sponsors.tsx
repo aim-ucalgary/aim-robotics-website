@@ -13,7 +13,7 @@ function Sponsors() {
       <div className="container">
         <SectionLabel>{sponsors.sectionLabel}</SectionLabel>
 
-        <div className="sponsors__top">
+        <div className="sponsors__top reveal">
           <h2 id="sponsors-heading" className="sponsors__heading">
             {sponsors.heading}
           </h2>
@@ -43,8 +43,12 @@ function Sponsors() {
           <TechnicalLabel className="sponsors__block-label">{sponsors.objectivesLabel}</TechnicalLabel>
           <p className="sponsors__objectives-intro">{sponsors.supportText}</p>
           <div className="sponsors__objectives">
-            {sponsors.objectives.map((objective) => (
-              <div key={objective.id} className="sponsors__objective">
+            {sponsors.objectives.map((objective, index) => (
+              <div
+                key={objective.id}
+                className="sponsors__objective reveal"
+                style={{ transitionDelay: `${index * 80}ms` }}
+              >
                 <TechnicalLabel accent>{objective.tag}</TechnicalLabel>
                 <h4 className="sponsors__objective-title">{objective.title}</h4>
                 <p className="sponsors__objective-description">{objective.description}</p>
@@ -58,7 +62,7 @@ function Sponsors() {
           <TechnicalLabel className="sponsors__block-label">{sponsors.tiersLabel}</TechnicalLabel>
           <div className="sponsors__tiers">
             {sponsors.tiers.map((tier) => (
-              <div key={tier.id} className={`sponsors__tier sponsors__tier--${tier.id}`}>
+              <div key={tier.id} className={`sponsors__tier sponsors__tier--${tier.id} reveal`}>
                 <div className="sponsors__tier-info">
                   <span className="sponsors__tier-price">{tier.price}</span>
                   <h4 className="sponsors__tier-name">{tier.name}</h4>
@@ -84,7 +88,7 @@ function Sponsors() {
         </div>
 
         {/* Benefits table */}
-        <div className="sponsors__block sponsors__benefits">
+        <div className="sponsors__block sponsors__benefits reveal">
           <div className="sponsors__benefits-head">
             <TechnicalLabel>{sponsors.benefitsLabel}</TechnicalLabel>
             <h3 className="sponsors__benefits-heading">{sponsors.benefitsHeading}</h3>
@@ -130,7 +134,7 @@ function Sponsors() {
         </div>
 
         {/* Budget + in-kind */}
-        <div className="sponsors__bottom">
+        <div className="sponsors__bottom reveal">
           <div className="sponsors__budget">
             <TechnicalLabel className="sponsors__block-label">{sponsors.budgetLabel}</TechnicalLabel>
             <div className="sponsors__budget-total">

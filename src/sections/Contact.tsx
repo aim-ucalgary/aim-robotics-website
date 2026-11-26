@@ -9,14 +9,14 @@ function Contact() {
       <div className="container">
         <SectionLabel>{contact.sectionLabel}</SectionLabel>
 
-        <div className="contact__top">
+        <div className="contact__top reveal">
           <h2 id="contact-heading" className="contact__heading">
             {contact.heading}
           </h2>
           <p className="contact__intro">{contact.intro}</p>
         </div>
 
-        <ul className="contact__channels">
+        <ul className="contact__channels reveal">
           {contact.channels.map((channel) => (
             <li key={channel.id} className="contact__channel">
               <a href={channel.href} className="contact__channel-link">
