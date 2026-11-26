@@ -9,21 +9,21 @@ intro: >
 # `image` is optional — topics without one show an "Image coming soon" placeholder.
 topics:
   - id: multi-robot-coordination
-    title: "Multi-Robot Coordination & Strategy"
-    image: "bisector pathfinding.png" # placeholder image
-    imageAlt: "Path planning diagram for multiple robots"
+  #   title: "Multi-Robot Coordination & Strategy"
+  #   image: "bisector pathfinding.png" # placeholder image
+  #   imageAlt: "Path planning diagram for multiple robots"
 
-  - id: motion-planning
-    title: "Motion Planning & Control"
-    image: "omniwheels.png" # placeholder image
-    imageAlt: "Omnidirectional robot wheels"
+  # - id: motion-planning
+  #   title: "Motion Planning & Control"
+  #   image: "omniwheels.png" # placeholder image
+  #   imageAlt: "Omnidirectional robot wheels"
 
-  - id: motion-planning
-    title: "Motion Planning & Control"
-    image: "omniwheels.png" # placeholder image
-    imageAlt: "Omnidirectional robot wheels"
+  # - id: motion-planning
+  #   title: "Motion Planning & Control"
+  #   image: "omniwheels.png" # placeholder image
+  #   imageAlt: "Omnidirectional robot wheels"
   
-  - id: motion-planning
-    title: "Motion Planning & Control"
-    image: "omniwheels.png" # placeholder image
-    imageAlt: "Omnidirectional robot wheels"
+  # - id: motion-planning
+  #   title: "Motion Planning & Control"
+  #   image: "omniwheels.png" # placeholder image
+  #   imageAlt: "Omnidirectional robot wheels"

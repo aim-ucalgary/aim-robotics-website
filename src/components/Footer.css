@@ -1,7 +1,7 @@
 .footer {
-  border-top: 1px solid var(--line);
+  border-top: 4px solid var(--aim-red);
   background: var(--off-black);
-  color: var(--off-black);
+  color: var(--charcoal);
   padding-block: clamp(3rem, 8vw, 5rem) clamp(2rem, 5vw, 3rem);
 }
 
@@ -19,16 +19,18 @@
 }
 
 .footer__brand {
-  font-family: var(--font-sans);
+  font-family: var(--font-condensed);
   font-weight: 800;
-  font-size: 1.5rem;
-  color: var(--aim-red);
+  text-transform: uppercase;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--ink);
 }
 
 .footer__expansion {
-  font-family: var(--font-condensed);
+  font-family: var(--font-mono);
   font-size: 0.8125rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -38,7 +40,7 @@
   flex-direction: column;
   gap: 0.35rem;
   font-size: 0.9375rem;
-  color: var(--white);
+  color: var(--charcoal);
 }
 
 .footer__social {
@@ -49,11 +51,12 @@
 
 .footer__social-link {
   font-family: var(--font-condensed);
-  font-size: 0.9375rem;
-  letter-spacing: 0.04em;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--white);
+  color: var(--on-white);
   width: fit-content;
   border-bottom: 1px solid transparent;
   transition:
@@ -63,8 +66,8 @@
 
 .footer__social-link:hover,
 .footer__social-link:focus-visible {
-  color: var(--aim-red);
-  border-color: var(--aim-red);
+  color: var(--aim-gold);
+  border-color: var(--aim-gold);
 }
 
 .footer__motto {
@@ -73,7 +76,7 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--aim-red);
+  color: var(--aim-gold);
   align-self: end;
 }
 
@@ -81,7 +84,8 @@
   grid-column: 1 / -1;
   margin-top: 1.5rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
   font-size: 0.8125rem;
   color: var(--muted);
 }

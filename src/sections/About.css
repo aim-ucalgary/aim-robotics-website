@@ -10,8 +10,9 @@
 }
 
 .about__heading {
-  font-family: var(--font-sans);
+  font-family: var(--font-condensed);
   font-weight: 800;
+  text-transform: uppercase;
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   line-height: 1.02;
   letter-spacing: -0.01em;
@@ -41,21 +42,22 @@
   flex-direction: column;
   gap: 0.75rem;
   padding-top: 1.25rem;
-  border-top: 1px solid var(--line);
+  border-top: 3px solid var(--aim-red);
 }
 
 .about__goal-number {
   font-family: var(--font-condensed);
-  font-size: 0.9375rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: var(--aim-red);
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--aim-gold);
 }
 
 .about__goal-title {
-  font-family: var(--font-sans);
+  font-family: var(--font-condensed);
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.75rem;
+  letter-spacing: 0.04em;
   color: var(--ink);
 }
 

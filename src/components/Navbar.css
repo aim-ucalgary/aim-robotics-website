@@ -13,7 +13,7 @@
 }
 
 .navbar--scrolled {
-  background: rgba(100, 100, 100, 0.3);
+  background: rgba(11, 11, 11, 0.92);
   border-bottom-color: var(--line);
   backdrop-filter: blur(8px);
 }
@@ -37,12 +37,12 @@
 
 .navbar__link {
   font-family: var(--font-condensed);
-  font-size: 0.9375rem;
+  font-size: 1.0625rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--charcoal);
+  color: var(--on-white);
   padding-bottom: 2px;
   border-bottom: 1px solid transparent;
   transition:
@@ -52,8 +52,8 @@
 
 .navbar__link:hover,
 .navbar__link:focus-visible {
-  color: var(--aim-red);
-  border-color: var(--aim-red);
+  color: var(--aim-gold);
+  border-color: var(--aim-gold);
 }
 
 .navbar__toggle {
@@ -88,8 +88,8 @@
   .navbar__mobile {
     flex-direction: column;
     padding: 0.5rem var(--container-pad) 1.5rem;
-    background: var(--white);
-    border-bottom: 1px solid var(--line);
+    background: var(--black);
+    border-bottom: 4px solid var(--aim-red);
   }
 
   .navbar__mobile--open {
@@ -110,6 +110,6 @@
 
   .navbar__mobile-link:hover,
   .navbar__mobile-link:focus-visible {
-    color: var(--aim-red);
+    color: var(--aim-gold);
   }
 }

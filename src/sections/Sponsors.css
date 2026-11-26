@@ -15,8 +15,9 @@
 }
 
 .sponsors__heading {
-  font-family: var(--font-sans);
+  font-family: var(--font-condensed);
   font-weight: 800;
+  text-transform: uppercase;
   font-size: clamp(2.5rem, 6vw, 4.25rem);
   line-height: 1.05;
   color: var(--ink);
@@ -63,7 +64,7 @@
   flex-direction: column;
   gap: 0.6rem;
   padding-top: 1.5rem;
-  border-top: 2px solid var(--ink);
+  border-top: 3px solid var(--aim-red);
 }
 
 .sponsors__objective-title {
@@ -102,35 +103,34 @@
   flex-direction: column;
   gap: 0.4rem;
   padding-left: 1rem;
-  border-left: 3px solid var(--tier-accent, var(--aim-red));
+  border-left: 4px solid var(--tier-accent, var(--aim-red));
 }
 
 .sponsors__tier--platinum {
-  --tier-accent: var(--ink);
+  --tier-accent: #e04a57; /* lighter crimson so the price stays readable on black */
 }
 
 .sponsors__tier--gold {
-  --tier-accent: var(--aim-red);
+  --tier-accent: var(--aim-gold);
 }
 
 .sponsors__tier--silver {
-  --tier-accent: var(--charcoal);
+  --tier-accent: #d0d0d0;
 }
 
 .sponsors__tier-price {
   font-family: var(--font-condensed);
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1;
   color: var(--tier-accent);
 }
 
 .sponsors__tier-name {
-  font-family: var(--font-sans);
+  font-family: var(--font-condensed);
   font-weight: 800;
-  font-size: clamp(1.4rem, 2.6vw, 1.85rem);
   text-transform: uppercase;
+  font-size: clamp(1.4rem, 2.6vw, 1.85rem);
   color: var(--ink);
 }
 
@@ -184,7 +184,7 @@
 .sponsors__benefits {
   padding: clamp(1.5rem, 4vw, 2.75rem);
   border: 1px solid var(--line);
-  border-top: 3px solid var(--aim-red);
+  border-top: 4px solid var(--aim-red);
   background: var(--off-black);
 }
 
@@ -198,14 +198,17 @@
 }
 
 .sponsors__benefits-heading {
-  font-family: var(--font-sans);
+  font-family: var(--font-condensed);
   font-weight: 800;
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
   text-transform: uppercase;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
   color: var(--ink);
 }
 
+/* position: relative keeps the table's screen-reader text inside this scroll box,
+   so it can't widen the page on phones. */
 .sponsors__table-wrap {
+  position: relative;
   overflow-x: auto;
 }
 
@@ -224,7 +227,7 @@
 
 .sponsors__table thead th {
   vertical-align: bottom;
-  border-bottom: 2px solid var(--ink);
+  border-bottom: 2px solid var(--aim-gold);
 }
 
 .sponsors__table thead th:first-child,
@@ -234,9 +237,9 @@
 }
 
 .sponsors__table thead th:first-child {
-  font-family: var(--font-condensed);
+  font-family: var(--font-mono);
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
@@ -252,11 +255,11 @@
 
 .sponsors__table-price {
   display: block;
-  font-family: var(--font-condensed);
+  font-family: var(--font-mono);
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.1em;
-  color: var(--aim-red);
+  color: var(--aim-gold);
 }
 
 .sponsors__table tbody th {
@@ -272,11 +275,11 @@
 .sponsors__check {
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--aim-red);
+  color: var(--aim-gold);
 }
 
 .sponsors__dash {
-  color: var(--circle-color);
+  color: var(--muted);
 }
 
 /* ---------- Budget + in-kind ---------- */
@@ -296,17 +299,18 @@
 }
 
 .sponsors__budget-value {
-  font-family: var(--font-sans);
+  font-family: var(--font-condensed);
   font-weight: 800;
+  text-transform: uppercase;
   font-size: clamp(2.75rem, 6vw, 4rem);
   line-height: 1;
   color: var(--ink);
 }
 
 .sponsors__budget-caption {
-  font-family: var(--font-condensed);
+  font-family: var(--font-mono);
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
@@ -334,7 +338,7 @@
   font-family: var(--font-condensed);
   font-weight: 700;
   letter-spacing: 0.06em;
-  color: var(--aim-red);
+  color: var(--aim-gold);
 }
 
 .sponsors__bar-track {
@@ -354,14 +358,15 @@
   gap: 1rem;
   padding: clamp(1.5rem, 4vw, 2.5rem);
   border: 1px solid var(--line);
-  border-left: 3px solid var(--aim-red);
+  border-left: 4px solid var(--aim-red);
   background: var(--off-black);
   align-self: start;
 }
 
 .sponsors__inkind-heading {
-  font-family: var(--font-sans);
+  font-family: var(--font-condensed);
   font-weight: 800;
+  text-transform: uppercase;
   font-size: clamp(1.35rem, 2.6vw, 1.75rem);
   color: var(--ink);
 }
