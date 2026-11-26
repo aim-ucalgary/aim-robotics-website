@@ -36,6 +36,8 @@ objectives:
     description: "Sending our team to Germany with a fleet of 6 robots to compete at RoboCup."
 
 tiersLabel: "SPONSORSHIP TIERS"
+# Each tier can list its sponsors. Put logo files in public/sponsors/.
+# Set fullBleed: true when the logo image already includes its own margin/background.
 tiers:
   - id: platinum
     name: "Platinum Tier"
@@ -45,10 +47,27 @@ tiers:
     name: "Gold Tier"
     price: "$500"
     description: "Major partners helping us move faster through design, manufacturing, and testing."
+    sponsors:
+      - name: "Igus Canada"
+        logo: "/sponsors/igus-canada.png"
+        fullBleed: true
   - id: silver
     name: "Silver Tier"
     price: "$250"
     description: "Key supporters providing funding, materials, tools, and services."
+    sponsors:
+      - name: "ANSYS"
+        logo: "/sponsors/ansys.png"
+      - name: "Protocase"
+        logo: "/sponsors/protocase.png"
+        fullBleed: true
+      - name: "Robotshop"
+        logo: "/sponsors/robotshop.png"
+        fullBleed: true
+      - name: "OnShape"
+        logo: "/sponsors/onshape.png"
+      - name: "Kids Planet Sunridge"
+        logo: "/sponsors/kids-planet-sunridge.png"
 
 benefitsLabel: "SPONSOR BENEFITS"
 benefitsHeading: "Choose the level that fits."

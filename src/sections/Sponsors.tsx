@@ -64,6 +64,20 @@ function Sponsors() {
                   <h4 className="sponsors__tier-name">{tier.name}</h4>
                   <p className="sponsors__tier-description">{tier.description}</p>
                 </div>
+                {tier.sponsors && (
+                  <ul className="sponsors__logos" aria-label={`${tier.name} sponsors`}>
+                    {tier.sponsors.map((sponsor) => (
+                      <li key={sponsor.name} className="sponsors__logo">
+                        <div
+                          className={`sponsors__logo-box${sponsor.fullBleed ? " sponsors__logo-box--bleed" : ""}`}
+                        >
+                          <img src={sponsor.logo} alt="" loading="lazy" />
+                        </div>
+                        <span className="sponsors__logo-name">{sponsor.name}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
           </div>

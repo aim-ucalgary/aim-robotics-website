@@ -139,11 +139,19 @@ export interface SponsorObjective {
   description: string;
 }
 
+export interface Sponsor {
+  name: string;
+  logo: string;
+  /** Fill the tile edge to edge, for logos that include their own margin or background. */
+  fullBleed?: boolean;
+}
+
 export interface SponsorTier {
   id: string;
   name: string;
   price: string;
   description: string;
+  sponsors?: Sponsor[];
 }
 
 export interface SponsorBenefit {

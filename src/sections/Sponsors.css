@@ -85,6 +85,10 @@
 }
 
 .sponsors__tier {
+  display: grid;
+  grid-template-columns: minmax(0, 18rem) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: start;
   padding-block: clamp(1.75rem, 4vh, 2.5rem);
   border-top: 1px solid var(--line);
 }
@@ -134,6 +138,46 @@
   max-width: 60ch;
   font-size: 0.9375rem;
   color: var(--muted);
+}
+
+.sponsors__logos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem 1rem;
+}
+
+.sponsors__logo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* Sponsor logos have opaque white backgrounds, so the tile stays white on the dark page. */
+.sponsors__logo-box {
+  aspect-ratio: 16 / 9;
+  padding: 1.25rem;
+  overflow: hidden;
+  background: #fff;
+}
+
+.sponsors__logo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sponsors__logo-box--bleed {
+  padding: 0;
+}
+
+.sponsors__logo-box--bleed img {
+  object-fit: cover;
+}
+
+.sponsors__logo-name {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--ink);
 }
 
 /* ---------- Benefits table ---------- */
@@ -329,18 +373,24 @@
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
-  .sponsors__objectives {
+  .sponsors__objectives,
+  .sponsors__logos {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 720px) {
   .sponsors__top,
+  .sponsors__tier,
   .sponsors__bottom {
     grid-template-columns: 1fr;
   }
 
   .sponsors__objectives {
     grid-template-columns: 1fr;
+  }
+
+  .sponsors__logo-box:not(.sponsors__logo-box--bleed) {
+    padding: 0.75rem;
   }
 }
