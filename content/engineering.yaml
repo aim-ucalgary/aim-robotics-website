@@ -44,7 +44,7 @@ projects:
     tag: "PLANNING / CONTROLS"
     title: "Motion & Control"
     description: "The control systems use real-time state estimation and path planning to determine how each robot should move through the field. Trajectory generation and feedback control allow the robots to respond quickly to changing conditions and maintain precise movement. This is enabled by our omnidirectional drive, which lets each robot move freely in any direction without needing to reorient."
-    mediaImage: "omniwheels.png"
+    mediaImage: "devices/dribbler.png"
 
   - id: custom-electronics
     number: "04"

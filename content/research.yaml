@@ -7,10 +7,6 @@ intro: >
 
 # To add a research topic, add a new entry below and put its image in /public.
 # `image` is optional — topics without one show an "Image coming soon" placeholder.
-# `href` is optional — makes the card clickable:
-#     "https://…"          opens that website in a new tab
-#     "/research/…"        stays on the AIM site (same tab)
-# `tag` is optional — adds a category to the caption, e.g. tag: "SOFTWARE" → "FIG. 01 · SOFTWARE".
 topics:
   - id: multi-robot-coordination
     title: "Multi-Robot Coordination & Strategy"

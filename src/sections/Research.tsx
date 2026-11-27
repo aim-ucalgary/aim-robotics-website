@@ -3,6 +3,9 @@ import SectionLabel from "../components/SectionLabel";
 import { research } from "../content/loader";
 import "./Research.css";
 
+/** Full web addresses open in a new tab; paths like "/research/x" stay on the AIM site. */
+const isExternal = (href: string) => /^https?:\/\//i.test(href);
+
 /** 05 / Research — intro line, then a horizontally scrollable row of research topics. */
 function Research() {
   const trackRef = useRef<HTMLUListElement | null>(null);
@@ -72,23 +75,50 @@ function Research() {
         </div>
 
         <ul ref={trackRef} className="research__track reveal" tabIndex={0} aria-label="Research topics">
-          {research.topics.map((topic) => (
-            <li key={topic.id} className="research__card">
-              <div className="research__media">
-                {topic.image ? (
-                  <img
-                    src={topic.image}
-                    alt={topic.imageAlt ?? topic.title}
-                    className="research__image"
-                    loading="lazy"
-                  />
+          {research.topics.map((topic, index) => {
+            const figure = `FIG. ${String(index + 1).padStart(2, "0")}`;
+            const external = topic.href ? isExternal(topic.href) : false;
+
+            const card = (
+              <>
+                <div className="research__media">
+                  {topic.image ? (
+                    <img
+                      src={topic.image}
+                      alt={topic.imageAlt ?? topic.title}
+                      className="research__image"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <span className="research__placeholder">Image coming soon</span>
+                  )}
+                </div>
+                <div className="research__caption">
+                  <span className="research__figure">
+                    {topic.tag ? `${figure} · ${topic.tag}` : figure}
+                  </span>
+                  <h3 className="research__title">{topic.title}</h3>
+                </div>
+              </>
+            );
+
+            return (
+              <li key={topic.id} className="research__card">
+                {topic.href ? (
+                  <a
+                    className="research__link"
+                    href={topic.href}
+                    {...(external && { target: "_blank", rel: "noopener noreferrer" })}
+                  >
+                    {card}
+                    {external && <span className="visually-hidden"> (opens in a new tab)</span>}
+                  </a>
                 ) : (
-                  <span className="research__placeholder">Image coming soon</span>
+                  <div className="research__link">{card}</div>
                 )}
-              </div>
-              <h3 className="research__title">{topic.title}</h3>
-            </li>
-          ))}
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>
