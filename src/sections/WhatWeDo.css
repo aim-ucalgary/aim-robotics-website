@@ -6,8 +6,9 @@
 }
 
 .what-we-do__heading {
-  font-family: var(--font-sans);
+  font-family: var(--font-condensed);
   font-weight: 800;
+  text-transform: uppercase;
   font-size: clamp(2.5rem, 6vw, 4rem);
   color: var(--ink);
   margin-bottom: clamp(2.5rem, 6vh, 4rem);
@@ -71,9 +72,9 @@
 }
 
 .mapping__column-label {
-  font-family: var(--font-condensed);
+  font-family: var(--font-mono);
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
@@ -96,7 +97,7 @@
 }
 
 .mapping__arrow {
-  color: var(--aim-red);
+  color: var(--aim-gold);
   font-size: 1.1rem;
   text-align: center;
 }
@@ -108,17 +109,18 @@
 }
 
 .mapping__traits li {
-  font-family: var(--font-condensed);
+  font-family: var(--font-mono);
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--charcoal);
 }
 
 .join__heading {
-  font-family: var(--font-sans);
+  font-family: var(--font-condensed);
   font-weight: 800;
+  text-transform: uppercase;
   font-size: clamp(2rem, 4.5vw, 3rem);
   color: var(--ink);
   margin-bottom: 1rem;
@@ -138,7 +140,7 @@
 }
 
 .join__trait {
-  border-top: 2px solid var(--ink);
+  border-top: 3px solid var(--aim-red);
   padding-top: 0.9rem;
 }
 

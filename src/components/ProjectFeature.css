@@ -26,7 +26,7 @@
   align-items: center;
   justify-content: center;
   background: var(--off-white);
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-strong);
 }
 
 .project-feature__media--contain {
@@ -35,9 +35,9 @@
 
 .project-feature__media-source {
   margin-top: 0.625rem;
-  font-family: var(--font-condensed);
+  font-family: var(--font-mono);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.4;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -51,14 +51,14 @@
 }
 
 .project-feature__media-source a:hover {
-  color: var(--aim-red);
+  color: var(--aim-gold);
   text-decoration-color: currentColor;
 }
 
 .project-feature__media-label {
-  font-family: var(--font-condensed);
+  font-family: var(--font-mono);
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
@@ -74,15 +74,18 @@
 
 .project-feature__number {
   font-family: var(--font-condensed);
-  font-size: 0.9375rem;
-  font-weight: 600;
-  color: var(--muted);
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--aim-gold);
 }
 
 .project-feature__title {
-  font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  font-family: var(--font-condensed);
+  font-weight: 800;
+  font-size: clamp(2rem, 3.4vw, 2.75rem);
+  line-height: 1;
+  text-transform: uppercase;
   color: var(--ink);
 }
 

@@ -44,15 +44,12 @@ projects:
     tag: "PLANNING / CONTROLS"
     title: "Motion & Control"
     description: "The control systems use real-time state estimation and path planning to determine how each robot should move through the field. Trajectory generation and feedback control allow the robots to respond quickly to changing conditions and maintain precise movement. This is enabled by our omnidirectional drive, which lets each robot move freely in any direction without needing to reorient."
-    mediaImage: "omniwheels.png"
+    mediaImage: "devices/dribbler.png"
 
   - id: custom-electronics
     number: "04"
     tag: "ELECTRICAL / EMBEDDED"
     title: "Custom Electronics"
     description: "A custom electronics architecture allows the system to be tailored to the robot’s specific needs, giving control over how each subsystem connects and operates. At its core, the main MCU board handles control and processing, while the low-voltage system powers the robot’s electronics and the high-voltage system drives the solenoid-based kicker. Together, these components allow software commands to directly control and coordinate the robot’s mechanical hardware."
-    mediaImage: "microcontroller.png"
+    mediaImage: "devices/Dev_board_layout.png"
     mediaFit: "contain"
-    mediaSource:
-      label: "IEEE Xplore // Document 8267943"
-      href: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8267943"

@@ -1,0 +1,181 @@
+.research {
+  padding-block: clamp(5rem, 12vh, 8rem);
+  background-color: var(--off-white);
+  background-image: var(--bg-pattern);
+  background-size: var(--bg-pattern-size);
+}
+
+.research__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-bottom: clamp(2rem, 5vh, 3rem);
+}
+
+.research__heading {
+  font-family: var(--font-condensed);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+
+.research__intro {
+  max-width: 58ch;
+  color: var(--charcoal);
+}
+
+/* ---------- Arrow controls ---------- */
+.research__controls {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.research__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--ink);
+  font-size: 1.15rem;
+  color: var(--ink);
+  transition:
+    background-color var(--duration-fast) var(--ease-precise),
+    border-color var(--duration-fast) var(--ease-precise),
+    color var(--duration-fast) var(--ease-precise),
+    opacity var(--duration-fast) var(--ease-precise);
+}
+
+.research__arrow:hover:not(:disabled),
+.research__arrow:focus-visible:not(:disabled) {
+  background: var(--aim-red);
+  border-color: var(--aim-red);
+  color: var(--white);
+}
+
+.research__arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* ---------- Scroll track ---------- */
+.research__track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 1.25rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--circle-color) transparent;
+}
+
+.research__track:focus-visible {
+  outline: 2px solid var(--aim-red);
+  outline-offset: 4px;
+}
+
+/* ---------- Figure cards ----------
+   Dark take on a lab-report figure: picture on top, a ruled caption below
+   with a mono "FIG. 01 · TAG" line and the title. */
+.research__card {
+  flex: 0 0 min(22rem, 85%);
+  display: flex;
+  scroll-snap-align: start;
+}
+
+.research__link {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--black);
+  border: 1px solid var(--line-strong);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    border-color var(--duration-fast) var(--ease-precise),
+    transform var(--duration-fast) var(--ease-precise);
+}
+
+/* Only real links react to hover. */
+a.research__link:hover,
+a.research__link:focus-visible {
+  border-color: var(--aim-gold);
+  transform: translateY(-4px);
+}
+
+.research__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #1b1b1b;
+}
+
+.research__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.research__placeholder {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.research__caption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1rem 1.25rem 1.25rem;
+  border-top: 1px solid var(--line-strong);
+  transition: border-color var(--duration-fast) var(--ease-precise);
+}
+
+a.research__link:hover .research__caption,
+a.research__link:focus-visible .research__caption {
+  border-top-color: var(--aim-gold);
+}
+
+.research__figure {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--aim-gold);
+}
+
+.research__title {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  color: var(--ink);
+  transition: color var(--duration-fast) var(--ease-precise);
+}
+
+a.research__link:hover .research__title,
+a.research__link:focus-visible .research__title {
+  color: var(--aim-gold);
+}
+
+/* Room for the hover lift so it isn't clipped by the scroll track. */
+.research__track {
+  padding-top: 6px;
+}
+
+@media (max-width: 720px) {
+  .research__controls {
+    display: none;
+  }
+}

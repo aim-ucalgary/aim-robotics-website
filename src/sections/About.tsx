@@ -9,7 +9,7 @@ function About() {
       <div className="container">
         <SectionLabel>{about.sectionLabel}</SectionLabel>
 
-        <div className="about__top">
+        <div className="about__top reveal">
           <h2 id="about-heading" className="about__heading">
             {about.heading}
           </h2>
@@ -19,8 +19,8 @@ function About() {
         <hr className="rule about__rule" />
 
         <ol className="about__goals">
-          {about.goals.map((goal) => (
-            <li key={goal.number} className="about__goal">
+          {about.goals.map((goal, index) => (
+            <li key={goal.number} className="about__goal reveal" style={{ transitionDelay: `${index * 80}ms` }}>
               <span className="about__goal-number">{goal.number}</span>
               <h3 className="about__goal-title">{goal.title}</h3>
               <p className="about__goal-description">{goal.description}</p>

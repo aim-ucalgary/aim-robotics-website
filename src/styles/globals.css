@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600;700&display=swap");
 @import "./variables.css";
 
 *,
@@ -39,6 +40,12 @@ p {
   margin: 0;
 }
 
+/* Condensed caps headings sit tight, like the logo wordmark. */
+h1,
+h2 {
+  line-height: 1;
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -61,7 +68,7 @@ button {
 a:focus-visible,
 button:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid var(--aim-red);
+  outline: 2px solid var(--aim-gold);
   outline-offset: 3px;
 }
 
@@ -94,7 +101,7 @@ button:focus-visible,
   left: 1rem;
   z-index: 200;
   padding: 0.75rem 1.25rem;
-  background: var(--ink);
+  background: var(--aim-red);
   color: var(--white);
   font-family: var(--font-condensed);
   letter-spacing: 0.08em;
@@ -112,27 +119,27 @@ button:focus-visible,
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
-  font-family: var(--font-condensed);
+  font-family: var(--font-mono);
   font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--aim-red);
+  color: var(--muted);
 }
 
 .technical-label--accent {
-  color: var(--aim-red);
+  color: var(--aim-gold);
 }
 
 .section-label {
   display: block;
   margin-bottom: clamp(1.5rem, 4vw, 3rem);
-  font-family: var(--font-condensed);
+  font-family: var(--font-mono);
   font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--aim-red);
+  color: var(--aim-gold);
 }
 
 .rule {
@@ -146,9 +153,9 @@ button:focus-visible,
   align-items: center;
   gap: 0.5em;
   font-family: var(--font-condensed);
-  font-size: 0.9375rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--ink);
@@ -166,8 +173,8 @@ button:focus-visible,
 
 .arrow-link:hover,
 .arrow-link:focus-visible {
-  color: var(--aim-red);
-  border-color: var(--aim-red);
+  color: var(--aim-gold);
+  border-color: var(--aim-gold);
 }
 
 .arrow-link:hover .arrow-link__arrow,
@@ -176,14 +183,16 @@ button:focus-visible,
 }
 
 .arrow-link--primary {
-  border: 1px solid var(--ink);
-  padding: 0.85em 1.4em;
+  border: 1px solid var(--aim-red);
+  background: var(--aim-red);
+  color: var(--white);
+  padding: 0.75em 1.4em;
 }
 
 .arrow-link--primary:hover,
 .arrow-link--primary:focus-visible {
-  background: var(--aim-red);
-  border-color: var(--aim-red);
+  background: var(--aim-red-hover);
+  border-color: var(--aim-red-hover);
   color: var(--white);
 }
 

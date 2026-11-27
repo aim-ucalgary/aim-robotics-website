@@ -3,21 +3,21 @@ import TechnicalLabel from "../components/TechnicalLabel";
 import { teams } from "../content/loader";
 import "./SubTeams.css";
 
-/** 05 / Teams — communicates interdisciplinary integration around one system. */
+/** 06 / Teams — communicates interdisciplinary integration around one system. */
 function SubTeams() {
   return (
     <section id="teams" className="subteams" aria-labelledby="subteams-heading">
       <div className="container">
         <SectionLabel>{teams.sectionLabel}</SectionLabel>
-        <h2 id="subteams-heading" className="subteams__heading">
+        <h2 id="subteams-heading" className="subteams__heading reveal">
           {teams.heading}
         </h2>
-        <p className="subteams__intro">{teams.intro}</p>
+        <p className="subteams__intro reveal">{teams.intro}</p>
 
         <div className="subteams__diagram">
           <div className="subteams__row">
-            {teams.subteams.slice(0, 2).map((team) => (
-              <div key={team.id} className="subteams__card">
+            {teams.subteams.slice(0, 2).map((team, index) => (
+              <div key={team.id} className="subteams__card reveal" style={{ transitionDelay: `${index * 80}ms` }}>
                 <TechnicalLabel accent>{team.tag}</TechnicalLabel>
                 <h3 className="subteams__card-title">{team.title}</h3>
                 <p className="subteams__card-description">{team.description}</p>
@@ -30,8 +30,8 @@ function SubTeams() {
           </div>
 
           <div className="subteams__row">
-            {teams.subteams.slice(2, 4).map((team) => (
-              <div key={team.id} className="subteams__card">
+            {teams.subteams.slice(2, 4).map((team, index) => (
+              <div key={team.id} className="subteams__card reveal" style={{ transitionDelay: `${index * 80}ms` }}>
                 <TechnicalLabel accent>{team.tag}</TechnicalLabel>
                 <h3 className="subteams__card-title">{team.title}</h3>
                 <p className="subteams__card-description">{team.description}</p>

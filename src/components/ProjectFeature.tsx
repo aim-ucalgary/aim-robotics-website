@@ -24,7 +24,7 @@ function ProjectFeature({ project, reversed }: ProjectFeatureProps) {
     .join(" ");
 
   return (
-    <article className={`project-feature ${reversed ? "project-feature--reversed" : ""}`}>
+    <article className={`project-feature reveal ${reversed ? "project-feature--reversed" : ""}`}>
       <figure className="project-feature__media-figure">
         <div className={mediaClasses}>
           {project.mediaImage ? (

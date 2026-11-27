@@ -1,17 +1,32 @@
+/*
+ * "Match Night" theme: black stadium backdrop, crimson for fills and bands,
+ * gold for text accents and stats, silver for body text.
+ * Colors come from the AIM alt logo (crimson wordmark, gold crosshair, silver type).
+ */
 :root {
-  --aim-red: #d0aa3b;
-  --aim-red-dim: #8f0a16;
-  --ink: #e8e6e6;
-  --charcoal: #9a9999;
-  --muted: #c1c1c1;
-  --line: #5a0008;
-  --off-white: #1b1b1b;
-  --white: #eae1e1;
-  --aim-gold: #b30d1c;
-  --black: #1b1b1b;
-  --off-black: #0b0b0b;
-  --on-white: #dbdada;
-  --circle-color: #444343;
+  /* Brand */
+  --aim-red: #a50d1c; /* crimson wordmark: buttons, bands, borders (not small text: too dark on black) */
+  --aim-red-hover: #c01226;
+  --aim-red-dim: #7a0a15;
+  --aim-gold: #d0aa3b; /* crosshair gold: text accents, labels, stats */
+  --aim-gold-pale: #ffe7a8; /* gold that stays readable on crimson */
+
+  /* Text */
+  --ink: #ffffff; /* headings */
+  --charcoal: #bdbdbd; /* body copy */
+  --muted: #a8a8a8; /* secondary copy */
+  --on-white: #bdbdbd;
+  --white: #ffffff;
+
+  /* Surfaces */
+  --black: #0b0b0b; /* page */
+  --off-white: #141414; /* alternate sections */
+  --off-black: #0b0b0b; /* panels and footer */
+  --circle-color: #2a2a2a; /* tracks, dashes, neutral fills */
+
+  /* Rules */
+  --line: #262626;
+  --line-strong: #3a3a3a;
 
   --font-sans: "Inter Tight", "Inter", "Helvetica Neue", Arial, sans-serif;
   --font-condensed: "Barlow Condensed", "Roboto Condensed", "Inter Tight", sans-serif;
@@ -24,7 +39,7 @@
   --duration-fast: 300ms;
   --duration-slow: 600ms;
 
-  /* Faint dot grid, tiled sitewide as a restrained engineering-graph-paper backdrop. */
-  --bg-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56'%3E%3Ccircle cx='1' cy='1' r='1' fill='%23474747' fill-opacity='0.14'/%3E%3C/svg%3E");
+  /* Faint dot grid, tiled sitewide. */
+  --bg-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56'%3E%3Ccircle cx='1' cy='1' r='1' fill='%23ffffff' fill-opacity='0.06'/%3E%3C/svg%3E");
   --bg-pattern-size: 56px 56px;
 }

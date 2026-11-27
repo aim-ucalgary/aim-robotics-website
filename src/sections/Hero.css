@@ -1,4 +1,9 @@
 .hero {
+  /* Dark take on the "Meet the Team" template: kit stripes, circuit traces,
+     field markings and a line-drawn ball. Falls back to black while loading.
+     Anchored left so the kit stripes stay in view when narrower screens crop it. */
+  background: var(--black) url("../assets/hero-background.svg") left center / cover no-repeat;
+  border-bottom: 4px solid var(--aim-red);
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -22,11 +27,12 @@
 .hero__heading {
   display: flex;
   flex-direction: column;
-  font-family: var(--font-sans);
+  font-family: var(--font-condensed);
   font-weight: 800;
-  font-size: clamp(2.75rem, 7.5vw, 6.25rem);
-  line-height: 0.98;
-  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  font-size: clamp(3.5rem, 9vw, 7.5rem);
+  line-height: 0.9;
+  letter-spacing: 0;
   color: var(--ink);
   margin: 0;
 }
@@ -36,10 +42,9 @@
 }
 
 .hero__subheading {
-  font-family: var(--font-condensed);
-  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  font-family: var(--font-sans);
+  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
   color: var(--charcoal);
-  letter-spacing: 0.01em;
 }
 
 .hero__tags {
@@ -50,14 +55,14 @@
 }
 
 .hero__tag {
-  font-family: var(--font-condensed);
+  font-family: var(--font-mono);
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
   padding-top: 0.6rem;
-  border-top: 1px solid var(--line);
+  border-top: 3px solid var(--aim-red);
 }
 
 .hero__media {
@@ -67,7 +72,8 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: var(--black);
+  /* Transparent so the logo sits directly on the hero background. */
+  background: transparent;
 }
 
 .hero__motif {

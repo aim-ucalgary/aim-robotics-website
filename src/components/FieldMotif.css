@@ -1,0 +1,18 @@
+/* The dashed pass line flows from the passer toward the goal end.
+   -11 = one dash (5) + one gap (6), so each loop lines up seamlessly. */
+.field-motif__pass {
+  animation: field-motif-pass-flow 0.9s linear infinite;
+}
+
+@keyframes field-motif-pass-flow {
+  to {
+    stroke-dashoffset: -11;
+  }
+}
+
+/* Stop the flow entirely (the global reduced-motion rule only shortens it). */
+@media (prefers-reduced-motion: reduce) {
+  .field-motif__pass {
+    animation: none;
+  }
+}
